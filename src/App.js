@@ -1,11 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-
+import Home from "./Pages/Home";
+import Starred from "./Pages/Starred";
 function App() {
   return (
-    <div className="App">
-      <h1>Fresh start</h1>
+    <div>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/starred" element={<Starred />} />
+        <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+      </Routes>
     </div>
   );
 }
